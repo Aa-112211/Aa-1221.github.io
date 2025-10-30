@@ -140,6 +140,7 @@
         </div>
       </div>
     </div>
+    
     <!--/ Abstract. -->
 <div class="columns is-centered has-text-centered">
   <div class="column is-four-fifths">
@@ -147,16 +148,11 @@
     <div class="publication-image">
       <!-- 显示框图 -->
       <img src="static/images/框图.png" alt="系统框图" style="max-width:100%;height:auto;">
-      <!-- 左右文字说明 -->
-      <div style="display:flex; justify-content:space-between; margin-top:8px; font-size:0.9rem; color:#666;">
-        <p style="width:48%; text-align:left;">
-          <strong>Left:</strong> Given the instruction and current RGB-D images, the VLM first identifies the target object. 
-          It then generalizes the segmented image and maps the center of gravity to the current scene using the center-of-gravity module, 
-          selecting the nearest and highest-scoring grasp pose.
-        </p>
-        <p style="width:48%; text-align:right;">
-          <strong>Right:</strong> The image on the right shows the captured result in a real-world scenario, depicting the grasped objects: 
-          a rasp, crowbar, pliers, and ratchet wrench. The method described in this paper enables grasping of unseen objects without requiring additional training.
+      <!-- 合并后的文字说明 -->
+      <div style="margin-top:8px; font-size:0.9rem; color:#666; text-align:center;">
+        <p>
+          <strong>Left:</strong> Given the instruction and current RGB-D images, the VLM first identifies the target object. It then generalizes the segmented image and maps the center of gravity to the current scene using the center-of-gravity module, selecting the nearest and highest-scoring grasp pose. 
+          <strong>Right:</strong> The image on the right shows the captured result in a real-world scenario, depicting the grasped objects: a rasp, crowbar, pliers, and ratchet wrench. The method described in this paper enables grasping of unseen objects without requiring additional training.
         </p>
       </div>
     </div>
