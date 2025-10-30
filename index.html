@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+        content="Foundation Model-Driven Grasping of Unknown Objects via Center of Gravity Estimation">
+  <meta name="keywords" content="Grasping, Center of Gravity, Foundation Model">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Foundation Model-Driven Grasping of Unknown Objects via Center of Gravity Estimation</title>
 
@@ -39,6 +39,28 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <style>
+    /* 缩小作者区域与摘要之间的间距 */
+    .publication-authors {
+      margin-bottom: 0.5rem !important;
+    }
+    .hero-body {
+      padding-bottom: 2rem !important;
+    }
+    .section:first-of-type {
+      padding-top: 2rem !important;
+    }
+    /* 优化视频表格间距 */
+    .publication-videos table {
+      border-spacing: 0.75rem !important;
+    }
+    /* 通讯作者标记样式 */
+    sup.* {
+      color: #e74c3c;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 
@@ -83,11 +105,24 @@
 
           <div class="is-size-6 publication-authors">
             <span class="author-block">Email: kxiangli@chd.edu.cn, heyage@chd.edu.cn, xwgong@chd.edu.cn, chdlzh@chd.edu.cn, baiyuru@chd.edu.cn</span>
+            <p class="is-size-6" style="margin-top: 0.3rem; font-style: italic;">* Corresponding author</p>
           </div>
 
-          <div class="column has-text-centered">
+          <div class="column has-text-centered" style="margin-top: 1rem;">
             <div class="publication-links">
               <!-- 可在此处添加论文链接（如PDF、代码等） -->
+              <a class="link" href="#" role="button">
+                <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Paper</span>
+              </a>
+              <a class="link" href="#" role="button">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
             </div>
           </div>
         </div>
@@ -239,18 +274,14 @@
   </div>
 </section>
 
-
-
-
-
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@article{xiangli2023foundation,
+  author    = {Xiangli, Kang and He, Yage and Gong, Xianwu* and Liu, Zhan and Bai, Yuru},
+  title     = {Foundation Model-Driven Grasping of Unknown Objects via Center of Gravity Estimation},
+  journal   = {To be submitted},
+  year      = {2023},
 }</code></pre>
   </div>
 </section>
