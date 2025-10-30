@@ -115,19 +115,20 @@
       </div>
     </div>
     <!--/ Abstract. -->
-  
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-four-fifths">
-      <h2 class="title is-3">Overview</h2>
-      <div class="publication-image">
-        <!-- img标签：src填图片地址，alt填图片加载失败时的提示文字 -->
-        <img src="./static/images/overview.png" alt="Overview相关图片" style="max-width:100%;height:auto;">
-        <!-- 图片下方的小字说明 -->
-        <p style="margin-top:8px;font-size:0.9rem;color:#666;text-align: left;">left. Given the instruction and current RGB-D images, the VLM first identifies the target object. It then generalizes the segmented image and maps the center of gravity to the current scene using the center-of-gravity module, selecting the nearest and highest-scoring grasp pose. right. The image on the right shows the captured result in a real-world scenario, depicting the grasped objects: a rasp, crowbar, pliers, and ratchet wrench. The method described in this paper enables grasping of unseen objects without requiring additional training.</p>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="publication-image">
+          <!-- 显示框图 -->
+          <img src="static/images/框图.png" alt="系统框图" style="max-width:100%;height:auto;">
+          <!-- 图片说明文字 -->
+          <p style="margin-top:8px;font-size:0.9rem;color:#666;text-align: left;">
+            图示为系统总体框图，展示了从输入到输出的主要模块流程，包括感知、识别、决策与执行等关键环节。
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-
+    
     <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
       <h2 class="title is-3">In the real world</h2>
