@@ -44,6 +44,7 @@
     /* 视频容器样式调整 */
     .video-group {
       margin-bottom: 2rem;
+      text-align: center; /* 标题和视频组整体居中 */
     }
     
     .video-row {
@@ -55,13 +56,17 @@
     }
     
     .video-item {
-      width: calc(33.333% - 1rem); /* 上排三个视频宽度均分 */
+      width: calc(25% - 1rem); /* 上排四个视频宽度均分（若需上三下二，此处改为33.333%） */
       min-width: 160px;
       max-width: 200px;
     }
 
-    .video-item.double {
-      width: calc(20% - 1rem); /* 下排两个视频宽度适配 */
+    /* 上三下二布局专用类 */
+    .row-three {
+      width: calc(33.333% - 1rem);
+    }
+    .row-two {
+      width: calc(20% - 1rem); /* 下排两个视频宽度适配，居中分布 */
     }
     
     .video-container {
@@ -92,7 +97,6 @@
     
     /* 视频组标题样式 */
     .video-group-title {
-      text-align: center;
       margin: 2rem 0 1.5rem;
       font-size: 1.2rem;
       font-weight: bold;
@@ -106,7 +110,7 @@
         max-width: 140px;
       }
       
-      .video-item.double {
+      .row-three, .row-two {
         width: calc(50% - 1rem);
       }
       
@@ -219,7 +223,7 @@
         
         <!-- 上排三个视频 -->
         <div class="video-row">
-          <div class="video-item">
+          <div class="video-item row-three">
             <div class="video-container">
               <video controls loop>
                 <source src="static/videos/扳手.mp4" type="video/mp4">
@@ -227,7 +231,7 @@
             </div>
             <div class="video-caption">Wrench</div>
           </div>
-          <div class="video-item">
+          <div class="video-item row-three">
             <div class="video-container">
               <video controls loop>
                 <source src="static/videos/锤子.mp4" type="video/mp4">
@@ -235,7 +239,7 @@
             </div>
             <div class="video-caption">Hammer</div>
           </div>
-          <div class="video-item">
+          <div class="video-item row-three">
             <div class="video-container">
               <video controls loop>
                 <source src="static/videos/搓刀.mp4" type="video/mp4">
@@ -247,7 +251,7 @@
         
         <!-- 下排两个视频 -->
         <div class="video-row">
-          <div class="video-item double">
+          <div class="video-item row-two">
             <div class="video-container">
               <video controls loop>
                 <source src="static/videos/螺丝刀.mp4" type="video/mp4">
@@ -255,7 +259,7 @@
             </div>
             <div class="video-caption">Screwdriver</div>
           </div>
-          <div class="video-item double">
+          <div class="video-item row-two">
             <div class="video-container">
               <video controls loop>
                 <source src="static/videos/钳子.mp4" type="video/mp4">
@@ -272,7 +276,7 @@
         
         <!-- 上排三个视频 -->
         <div class="video-row">
-          <div class="video-item">
+          <div class="video-item row-three">
             <div class="video-container">
               <video controls loop>
                 <source src="static/videos/扳手_动态.mp4" type="video/mp4">
@@ -280,7 +284,7 @@
             </div>
             <div class="video-caption">Wrench</div>
           </div>
-          <div class="video-item">
+          <div class="video-item row-three">
             <div class="video-container">
               <video controls loop>
                 <source src="static/videos/锤子_动态.mp4" type="video/mp4">
@@ -288,7 +292,7 @@
             </div>
             <div class="video-caption">Hammer</div>
           </div>
-          <div class="video-item">
+          <div class="video-item row-three">
             <div class="video-container">
               <video controls loop>
                 <source src="static/videos/搓刀_动态.mp4" type="video/mp4">
@@ -300,7 +304,7 @@
         
         <!-- 下排两个视频 -->
         <div class="video-row">
-          <div class="video-item double">
+          <div class="video-item row-two">
             <div class="video-container">
               <video controls loop>
                 <source src="static/videos/螺丝刀_动态.mp4" type="video/mp4">
@@ -308,7 +312,7 @@
             </div>
             <div class="video-caption">Screwdriver</div>
           </div>
-          <div class="video-item double">
+          <div class="video-item row-two">
             <div class="video-container">
               <video controls loop>
                 <source src="static/videos/钳子_动态.mp4" type="video/mp4">
