@@ -36,9 +36,9 @@
   <script src="./static/js/index.js"></script>
 
   <style>
-    /* 视频容器样式调整 - 确保所有视频大小一致 */
+    /* 视频容器样式调整 - 两行两列布局 */
     .video-section {
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 0 1rem;
     }
@@ -49,7 +49,7 @@
     
     .video-group-title {
       text-align: center;
-      margin: 2rem 0 1.5rem;
+      margin: 2rem 0 2rem;
       font-size: 1.2rem;
       font-weight: bold;
       color: #333;
@@ -58,25 +58,25 @@
     .video-row {
       display: flex;
       justify-content: center;
-      gap: 2rem; /* 统一视频间距 */
-      margin-bottom: 2rem;
+      gap: 3rem; /* 增加间距使布局更匀称 */
+      margin-bottom: 2.5rem;
       flex-wrap: wrap;
     }
     
-    /* 所有视频项大小完全一致 */
+    /* 两行两列布局 - 每个视频项宽度适中 */
     .video-item {
-      width: 240px; /* 固定宽度 */
-      flex-shrink: 0; /* 防止缩小 */
+      width: 280px; /* 适度增大视频宽度 */
+      flex-shrink: 0;
     }
     
     .video-container {
       position: relative;
       width: 100%;
-      height: 135px; /* 固定高度，保持16:9比例 */
+      height: 157px; /* 保持16:9比例 */
       overflow: hidden;
       border-radius: 6px;
       background-color: #f0f0f0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     
     .video-container video {
@@ -91,30 +91,35 @@
     .video-caption {
       text-align: center;
       margin-top: 0.8rem;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: #333;
-      min-height: 24px; /* 确保标题区域高度一致 */
+      min-height: 24px;
     }
     
     /* 响应式调整 */
-    @media (max-width: 900px) {
+    @media (max-width: 800px) {
       .video-item {
-        width: 200px;
+        width: 220px;
       }
       .video-container {
-        height: 112px;
+        height: 124px;
+      }
+      .video-row {
+        gap: 2rem;
       }
     }
     
-    @media (max-width: 600px) {
+    @media (max-width: 550px) {
       .video-item {
-        width: 160px;
+        width: 100%;
+        max-width: 300px;
       }
       .video-container {
-        height: 90px;
+        height: 169px;
       }
       .video-row {
-        gap: 1rem;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
       }
     }
   </style>
@@ -213,11 +218,11 @@
           In the real world, we conducted experiments using the Piper robotic arm, with point cloud data acquired via the D435 scanner. We compiled an image dataset comprising 790 centre-of-gravity points. The dataset includes common household objects such as hammers, hand files, ratchet wrenches, screwdrivers, and pincers. We tested ten objects with uneven mass distributions in real-world settings, evaluating the model's performance in both complex and dynamic scenarios.
         </p>
         
-        <!-- 第一组视频（复杂环境） -->
+        <!-- 第一组视频（复杂环境）- 两行两列布局 -->
         <div class="video-group">
           <div class="video-group-title">Closed-loop Grasping in Complex Environments</div>
           
-          <!-- 上排三个视频 -->
+          <!-- 第一行两个视频 -->
           <div class="video-row">
             <div class="video-item">
               <div class="video-container">
@@ -235,6 +240,10 @@
               </div>
               <div class="video-caption">Hammer</div>
             </div>
+          </div>
+          
+          <!-- 第二行两个视频 -->
+          <div class="video-row">
             <div class="video-item">
               <div class="video-container">
                 <video controls loop>
@@ -242,18 +251,6 @@
                 </video>
               </div>
               <div class="video-caption">File</div>
-            </div>
-          </div>
-          
-          <!-- 下排两个视频 -->
-          <div class="video-row">
-            <div class="video-item">
-              <div class="video-container">
-                <video controls loop>
-                  <source src="static/videos/螺丝刀.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="video-caption">Screwdriver</div>
             </div>
             <div class="video-item">
               <div class="video-container">
@@ -266,11 +263,11 @@
           </div>
         </div>
 
-        <!-- 第二组视频（动态环境） -->
+        <!-- 第二组视频（动态环境）- 两行两列布局 -->
         <div class="video-group">
           <div class="video-group-title">Closed-loop Grasping in Dynamic Environments</div>
           
-          <!-- 上排三个视频 -->
+          <!-- 第一行两个视频 -->
           <div class="video-row">
             <div class="video-item">
               <div class="video-container">
@@ -288,6 +285,10 @@
               </div>
               <div class="video-caption">Hammer</div>
             </div>
+          </div>
+          
+          <!-- 第二行两个视频 -->
+          <div class="video-row">
             <div class="video-item">
               <div class="video-container">
                 <video controls loop>
@@ -295,18 +296,6 @@
                 </video>
               </div>
               <div class="video-caption">File</div>
-            </div>
-          </div>
-          
-          <!-- 下排两个视频 -->
-          <div class="video-row">
-            <div class="video-item">
-              <div class="video-container">
-                <video controls loop>
-                  <source src="static/videos/螺丝刀_动态.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="video-caption">Screwdriver</div>
             </div>
             <div class="video-item">
               <div class="video-container">
@@ -325,7 +314,4 @@
 
 </body>
 </html>
-
-
-</body>
-</html>
+    
