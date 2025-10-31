@@ -12,8 +12,13 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
+
     gtag('config', 'G-PYVRSFMDRL');
   </script>
 
@@ -61,14 +66,6 @@
       margin-top: 0.5rem;
       font-size: 0.85rem;
     }
-    /* 视频分组标题样式 */
-    .video-group-title {
-      text-align: center;
-      margin: 2rem 0 1rem; /* 上下间距，与视频区区分 */
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #333; /* 标题颜色，适配页面风格 */
-    }
   </style>
 </head>
 <body>
@@ -81,7 +78,9 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
+
 </nav>
+
 
 <section class="hero">
   <div class="hero-body">
@@ -90,11 +89,19 @@
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">Foundation Model-Driven Grasping of Unknown Objects via Center of Gravity Estimation</h1>
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><a href="#">Kang Xiangli</a><sup>1</sup>,</span>
-            <span class="author-block"><a href="#">Yage He</a><sup>1</sup>,</span>
-            <span class="author-block"><a href="#">Xianwu Gong<sup>*</sup></a><sup>1</sup>,</span>
-            <span class="author-block"><a href="#">Zhan Liu</a><sup>1</sup>,</span>
-            <span class="author-block"><a href="#">Yuru Bai</a><sup>1</sup></span>
+            <span class="author-block">
+              <a href="#">Kang Xiangli</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Yage He</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Xianwu Gong<sup>*</sup></a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Zhan Liu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Yuru Bai</a><sup>1</sup>
+            </span>
           </div>
 
           <div class="is-size-5 publication-authors">
@@ -117,132 +124,132 @@
   </div>
 </section>
 
+  
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract -->
+    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            This study presents a grasping method for objects with uneven mass distribution by leveraging diffusion models to localize the center of gravity (CoG) on unknown objects. In robotic grasping, CoG deviation often leads to postural instability, where existing keypoint-based or affordance-driven methods exhibit limitations. We constructed a dataset of 790 images featuring unevenly distributed objects with keypoint annotations for CoG localization. A vision-driven framework based on foundation models was developed to achieve CoG-aware grasping. Experimental evaluations across real-world scenarios demonstrate that our method achieves a 49% higher success rate compared to conventional keypoint-based approaches and an 11% improvement over state-of-the-art affordance-driven methods. The system exhibits strong generalization with a 76% CoG localization accuracy on unseen objects.This provides an innovative solution for precise and stable grasping tasks, with its scientific validity further validated in complex and dynamic scenarios.
+            This study presents a grasping method for objects with uneven mass distribution by leveraging diffusion models to localize the center of gravity (CoG) on unknown objects. In robotic grasping, CoG deviation often leads to postural instability, where existing keypoint-based or affordance-driven methods exhibit limitations. We constructed a dataset of 790 images featuring unevenly distributed objects with keypoint annotations for CoG localization. A vision-driven framework based on foundation models was developed to achieve CoG-aware grasping. Experimental evaluations across real-world scenarios demonstrate that our method achieves a 49\% higher success rate compared to conventional keypoint-based approaches and an 11\% improvement over state-of-the-art affordance-driven methods. The system exhibits strong generalization with a 76\% CoG localization accuracy on unseen objects.This provides an innovative solution for precise and stable grasping tasks, with its scientific validity further validated in complex and dynamic scenarios.
           </p>
+          
         </div>
       </div>
     </div>
     
-    <!-- Overview -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Overview</h2>
-        <div class="publication-image">
-          <img src="static/images/框图.png" alt="系统框图" style="max-width:100%;height:auto;">
-          <div style="margin-top:8px; font-size:0.9rem; color:#666; text-align:center;">
-            <p>
-              <strong>Left:</strong> Given the instruction and current RGB-D images, the VLM first identifies the target object. It then generalizes the segmented image and maps the center of gravity to the current scene using the center-of-gravity module, selecting the nearest and highest-scoring grasp pose. 
-              <strong>Right:</strong> The image on the right shows the captured result in a real-world scenario, depicting the grasped objects: a rasp, crowbar, pliers, and ratchet wrench. The method described in this paper enables grasping of unseen objects without requiring additional training.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Real-world Experiments -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">In the real world</h2>
-        <p style ="text-align: left;">
-          In the real world, we conducted experiments using the Piper robotic arm, with point cloud data acquired via the D435 scanner. We compiled an image dataset comprising 790 centre-of-gravity points. The dataset includes common household objects such as hammers, hand files, ratchet wrenches, screwdrivers, and pincers. We tested ten objects with uneven mass distributions in real-world settings, evaluating the model's performance in both complex and dynamic scenarios.
+    <!--/ Abstract. -->
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Overview</h2>
+    <div class="publication-image">
+      <!-- 显示框图 -->
+      <img src="static/images/框图.png" alt="系统框图" style="max-width:100%;height:auto;">
+      <!-- 合并后的文字说明 -->
+      <div style="margin-top:8px; font-size:0.9rem; color:#666; text-align:center;">
+        <p>
+          <strong>Left:</strong> Given the instruction and current RGB-D images, the VLM first identifies the target object. It then generalizes the segmented image and maps the center of gravity to the current scene using the center-of-gravity module, selecting the nearest and highest-scoring grasp pose. 
+          <strong>Right:</strong> The image on the right shows the captured result in a real-world scenario, depicting the grasped objects: a rasp, crowbar, pliers, and ratchet wrench. The method described in this paper enables grasping of unseen objects without requiring additional training.
         </p>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3">In the real world</h2>
+      <p style ="text-align: left;">
+        In the real world, we conducted experiments using the Piper robotic arm, with point cloud data acquired via the D435 scanner. We compiled an image dataset comprising 790 centre-of-gravity points. The dataset includes common household objects such as hammers, hand files, ratchet wrenches, screwdrivers, and pincers. We tested ten objects with uneven mass distributions in real-world settings, evaluating the model's performance in both complex and dynamic scenarios.
+      </p>
       
-        <!-- 第一组视频：复杂环境（添加标题） -->
-        <div class="video-group-title">Closed-loop Grasping in Complex Environments</div>
-        <div class="columns is-multiline is-centered" style="margin-top: 1rem;">
-          <div class="column is-one-fifth video-item">
-            <div class="video-container">
-              <video controls loop>
-                <source src="static/videos/扳手.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="video-caption">Wrench</div>
+      <!-- 第一行视频（复杂环境） -->
+      <div class="columns is-multiline is-centered" style="margin-top: 2rem;">
+        <div class="column is-one-fifth video-item">
+          <div class="video-container">
+            <video controls loop>
+              <source src="static/videos/扳手.mp4" type="video/mp4">
+            </video>
           </div>
-          <div class="column is-one-fifth video-item">
-            <div class="video-container">
-              <video controls loop>
-                <source src="static/videos/锤子.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="video-caption">Hammers/div>
-          </div>
-          <div class="column is-one-fifth video-item">
-            <div class="video-container">
-              <video controls loop>
-                <source src="static/videos/搓刀.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="video-caption">File</div>
-          </div>
-          <div class="column is-one-fifth video-item">
-            <div class="video-container">
-              <video controls loop>
-                <source src="static/videos/螺丝刀.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="video-caption">Screwdriver</div>
-          </div>
-          <div class="column is-one-fifth video-item">
-            <div class="video-container">
-              <video controls loop>
-                <source src="static/videos/钳子.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="video-caption">Pliers</div>
-          </div>
+          <div class="video-caption">Wrench</div>
         </div>
+        <div class="column is-one-fifth video-item">
+          <div class="video-container">
+            <video controls loop>
+              <source src="static/videos/锤子.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-caption">Hammer</div>
+        </div>
+        <div class="column is-one-fifth video-item">
+          <div class="video-container">
+            <video controls loop>
+              <source src="static/videos/搓刀.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-caption">File</div>
+        </div>
+        <div class="column is-one-fifth video-item">
+          <div class="video-container">
+            <video controls loop>
+              <source src="static/videos/螺丝刀.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-caption">Screwdriver</div>
+        </div>
+        <div class="column is-one-fifth video-item">
+          <div class="video-container">
+            <video controls loop>
+              <source src="static/videos/钳子.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-caption">Pliers</div>
+        </div>
+      </div>
 
-        <!-- 第二组视频：动态环境（添加标题） -->
-        <div class="video-group-title">Closed-loop Grasping in Dynamic Environments</div>
-        <div class="columns is-multiline is-centered" style="margin-top: 1rem;">
-          <div class="column is-one-fifth video-item">
-            <div class="video-container">
-              <video controls loop>
-                <source src="static/videos/扳手_动态.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="video-caption">Wrench</div>
+      <!-- 第二行视频（动态环境） -->
+      <div class="columns is-multiline is-centered" style="margin-top: 1rem;">
+        <div class="column is-one-fifth video-item">
+          <div class="video-container">
+            <video controls loop>
+              <source src="static/videos/扳手_动态.mp4" type="video/mp4">
+            </video>
           </div>
-          <div class="column is-one-fifth video-item">
-            <div class="video-container">
-              <video controls loop>
-                <source src="static/videos/锤子_动态.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="video-caption">Hammer</div>
+          <div class="video-caption">Grasping of Wrenches in Dynamic Environments</div>
+        </div>
+        <div class="column is-one-fifth video-item">
+          <div class="video-container">
+            <video controls loop>
+              <source src="static/videos/锤子_动态.mp4" type="video/mp4">
+            </video>
           </div>
-          <div class="column is-one-fifth video-item">
-            <div class="video-container">
-              <video controls loop>
-                <source src="static/videos/搓刀_动态.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="video-caption">File</div>
+          <div class="video-caption">Grasping of Hammers in Dynamic Environments</div>
+        </div>
+        <div class="column is-one-fifth video-item">
+          <div class="video-container">
+            <video controls loop>
+              <source src="static/videos/搓刀_动态.mp4" type="video/mp4">
+            </video>
           </div>
-          <div class="column is-one-fifth video-item">
-            <div class="video-container">
-              <video controls loop>
-                <source src="static/videos/螺丝刀_动态.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="video-caption">Screwdriver</div>
+          <div class="video-caption">Grasping of Files in Dynamic Environments</div>
+        </div>
+        <div class="column is-one-fifth video-item">
+          <div class="video-container">
+            <video controls loop>
+              <source src="static/videos/螺丝刀_动态.mp4" type="video/mp4">
+            </video>
           </div>
-          <div class="column is-one-fifth video-item">
-            <div class="video-container">
-              <video controls loop>
-                <source src="static/videos/钳子_动态.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="video-caption">Pliers</div>
+          <div class="video-caption">Grasping of Screwdrivers in Dynamic Environments</div>
+        </div>
+        <div class="column is-one-fifth video-item">
+          <div class="video-container">
+            <video controls loop>
+              <source src="static/videos/钳子_动态.mp4" type="video/mp4">
+            </video>
           </div>
+          <div class="video-caption">Grasping of Pliers in Dynamic Environments</div>
         </div>
       </div>
     </div>
