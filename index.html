@@ -55,6 +55,20 @@
       color: #333;
     }
     
+    /* 新增：遮挡实验子标题样式（全英文，与整体风格匹配） */
+    .occlusion-subtitle {
+      text-align: center;
+      font-size: 1rem;
+      color: #555;
+      margin: 2.5rem 0 1.5rem;
+      font-weight: 500;
+    }
+    
+    /* 首次子标题间距调整（去除顶部多余间距） */
+    .occlusion-subtitle:first-of-type {
+      margin-top: 0;
+    }
+    
     .video-row {
       display: flex;
       justify-content: center;
@@ -399,17 +413,20 @@
           </div>
         </div>
 
-        <!-- 第五组视频：Occlusion experiment（锤子的遮挡实验-成功版）- 两行两列布局 -->
+        <!-- 统一大标题：Occlusion experiment（遮挡实验，全英文） -->
         <div class="video-group">
-          <div class="video-group-title">Occlusion experiment (Hammer Occlusion Test - Success)</div>
+          <div class="video-group-title">Occlusion Experiment</div>
           
-          <!-- 第一行两个视频：锤子_遮挡1、锤子_遮挡2 -->
+          <!-- 子标题1：锤子遮挡实验（全英文，无中文） -->
+          <div class="occlusion-subtitle">Hammer Occlusion Test (Success)</div>
+          
+          <!-- 锤子遮挡视频：两行两列 -->
           <div class="video-row">
             <div class="video-item">
               <div class="video-container">
                 <video controls loop autoplay>
                   <source src="static/videos/锤子_遮挡1.mp4" type="video/mp4">
-                  你的浏览器不支持HTML5视频播放，请升级浏览器后重试。
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
                 </video>
               </div>
               <div class="video-caption">Hammer Occlusion 1</div>
@@ -418,20 +435,18 @@
               <div class="video-container">
                 <video controls loop autoplay>
                   <source src="static/videos/锤子_遮挡2.mp4" type="video/mp4">
-                  你的浏览器不支持HTML5视频播放，请升级浏览器后重试。
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
                 </video>
               </div>
               <div class="video-caption">Hammer Occlusion 2</div>
             </div>
           </div>
-          
-          <!-- 第二行两个视频：锤子_遮挡3、锤子_遮挡4 -->
           <div class="video-row">
             <div class="video-item">
               <div class="video-container">
                 <video controls loop autoplay>
                   <source src="static/videos/锤子_遮挡3.mp4" type="video/mp4">
-                  你的浏览器不支持HTML5视频播放，请升级浏览器后重试。
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
                 </video>
               </div>
               <div class="video-caption">Hammer Occlusion 3</div>
@@ -440,25 +455,23 @@
               <div class="video-container">
                 <video controls loop autoplay>
                   <source src="static/videos/锤子_遮挡4.mp4" type="video/mp4">
-                  你的浏览器不支持HTML5视频播放，请升级浏览器后重试。
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
                 </video>
               </div>
               <div class="video-caption">Hammer Occlusion 4</div>
             </div>
           </div>
-        </div>
 
-        <!-- 第六组视频：Occlusion experiment（棘轮扳手+钳子遮挡实验-成功版）- 两行两列布局 -->
-        <div class="video-group">
-          <div class="video-group-title">Occlusion experiment (Ratchet Wrench & Pliers Occlusion Test - Success)</div>
+          <!-- 子标题2：棘轮扳手+钳子遮挡实验（全英文，无中文） -->
+          <div class="occlusion-subtitle">Ratchet Wrench & Pliers Occlusion Test (Success)</div>
           
-          <!-- 第一行两个视频：棘轮扳手_遮挡1、棘轮扳手_遮挡2 -->
+          <!-- 棘轮扳手+钳子遮挡视频：两行两列 -->
           <div class="video-row">
             <div class="video-item">
               <div class="video-container">
                 <video controls loop autoplay>
                   <source src="static/videos/棘轮扳手_遮挡1.mp4" type="video/mp4">
-                  你的浏览器不支持HTML5视频播放，请升级浏览器后重试。
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
                 </video>
               </div>
               <div class="video-caption">Ratchet Wrench Occlusion 1</div>
@@ -467,20 +480,18 @@
               <div class="video-container">
                 <video controls loop autoplay>
                   <source src="static/videos/棘轮扳手_遮挡2.mp4" type="video/mp4">
-                  你的浏览器不支持HTML5视频播放，请升级浏览器后重试。
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
                 </video>
               </div>
               <div class="video-caption">Ratchet Wrench Occlusion 2</div>
             </div>
           </div>
-          
-          <!-- 第二行两个视频：钳子_遮挡1、钳子_遮挡2 -->
           <div class="video-row">
             <div class="video-item">
               <div class="video-container">
                 <video controls loop autoplay>
                   <source src="static/videos/钳子_遮挡1.mp4" type="video/mp4">
-                  你的浏览器不支持HTML5视频播放，请升级浏览器后重试。
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
                 </video>
               </div>
               <div class="video-caption">Pliers Occlusion 1</div>
@@ -489,7 +500,7 @@
               <div class="video-container">
                 <video controls loop autoplay>
                   <source src="static/videos/钳子_遮挡2.mp4" type="video/mp4">
-                  你的浏览器不支持HTML5视频播放，请升级浏览器后重试。
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
                 </video>
               </div>
               <div class="video-caption">Pliers Occlusion 2</div>
