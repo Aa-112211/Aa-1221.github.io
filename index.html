@@ -99,12 +99,16 @@
       object-fit: contain;
     }
     
+    /* 核心修改1：调整视频标题的布局，增加内边距，避免被遮挡 */
     .video-caption {
       text-align: center;
       margin-top: 0.8rem;
       font-size: 0.95rem;
       color: #333;
       min-height: 24px;
+      padding: 0 0.5rem; /* 增加左右内边距，防止文字溢出 */
+      white-space: nowrap; /* 强制文字不换行 */
+      overflow: visible; /* 允许文字完整显示（替代hidden） */
     }
 
     /* 密集杂乱实验：强制一行四列的样式（核心修正） */
@@ -125,6 +129,8 @@
       width: 100%;
       overflow-x: auto; /* 小屏时允许横向滚动，避免挤压 */
       padding-bottom: 1rem;
+      padding-left: 1rem; /* 核心修改2：增加左侧内边距，避免第一个视频靠边缘 */
+      padding-right: 1rem;
     }
     /* 缩小视频项宽度，确保4个能放下 */
     .cluttered-video-item {
@@ -157,6 +163,7 @@
       margin: 1.8rem 0 1.2rem;
       font-weight: 500;
     }
+    /* 核心修改3：扭矩实验行增加左右内边距，避免第一个视频靠边缘 */
     .torque-video-row {
       display: flex;
       justify-content: center;
@@ -166,6 +173,8 @@
       width: 100%;
       overflow-x: auto; /* 小屏横向滚动 */
       padding-bottom: 1rem;
+      padding-left: 1rem; /* 左侧留空，避免第一个视频顶边 */
+      padding-right: 1rem;
     }
     .torque-video-item {
       width: 180px; /* 更小宽度适配5个视频 */
