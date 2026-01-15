@@ -118,7 +118,7 @@
       margin: 1.8rem 0 1.2rem;
       font-weight: 500;
     }
-    /* 密集杂乱实验视频行 - 缩小间距，提升整洁度 */
+    /* 密集杂乱实验视频行 - 缩小间距，提升整洁度（支持一行四列适配） */
     .cluttered-video-row {
       display: flex;
       justify-content: center;
@@ -126,9 +126,9 @@
       margin-bottom: 2rem; /* 减少行间距，更紧凑 */
       flex-wrap: wrap;
     }
-    /* 密集杂乱实验视频项 - 保持尺寸统一，确保整洁 */
+    /* 密集杂乱实验视频项 - 保持尺寸统一，确保整洁（适配一行四列布局） */
     .cluttered-video-item {
-      width: 260px; /* 略窄于普通视频项，适配8个视频的多行列布局 */
+      width: 260px; /* 略窄于普通视频项，适配多列布局 */
       flex-shrink: 0;
     }
     /* 密集杂乱实验视频容器 - 保持16:9比例，视觉统一 */
@@ -150,7 +150,19 @@
       object-fit: contain;
     }
     
-    /* 响应式调整 */
+    /* 响应式调整 - 适配一行四列在小屏幕的折叠效果 */
+    @media (max-width: 1200px) {
+      .cluttered-video-item {
+        width: 220px;
+      }
+      .cluttered-video-container {
+        height: 124px;
+      }
+      .cluttered-video-row {
+        gap: 2rem;
+      }
+    }
+    
     @media (max-width: 800px) {
       .video-item, .cluttered-video-item {
         width: 220px;
@@ -547,7 +559,7 @@
           </div>
         </div>
 
-        <!-- 第六组：密集杂乱实验（Dense and Cluttered Experiment）- 优化8个视频排版，整洁美观 -->
+        <!-- 第六组：密集杂乱实验（Dense and Cluttered Experiment）- 钳子实验已改为一行四列 -->
         <div class="video-group">
           <div class="video-group-title">Dense and Cluttered Experiment</div>
           
@@ -597,7 +609,7 @@
             </div>
           </div>
           
-          <!-- 子标题3：钳子 杂乱实验（4个视频，两行列布局，整洁紧凑） -->
+          <!-- 子标题3：钳子 杂乱实验（4个视频，一行四列布局 - 核心修改部分） -->
           <div class="cluttered-subtitle">Pliers (Cluttered)</div>
           <div class="cluttered-video-row">
             <div class="cluttered-video-item">
@@ -618,8 +630,6 @@
               </div>
               <div class="video-caption">Pliers Cluttered 2</div>
             </div>
-          </div>
-          <div class="cluttered-video-row">
             <div class="cluttered-video-item">
               <div class="cluttered-video-container">
                 <video controls loop autoplay>
