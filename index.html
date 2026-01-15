@@ -36,9 +36,9 @@
   <script src="./static/js/index.js"></script>
 
   <style>
-    /* 视频容器样式调整 - 两行两列布局 */
+    /* 视频容器样式调整 - 强制一行四列的基础布局 */
     .video-section {
-      max-width: 1000px;
+      max-width: 1200px; /* 加宽容器，适配一行四列 */
       margin: 0 auto;
       padding: 0 1rem;
     }
@@ -55,7 +55,6 @@
       color: #333;
     }
     
-    /* 遮挡实验子标题样式（全英文，每个工具独立标题） */
     .occlusion-subtitle {
       text-align: center;
       font-size: 1rem;
@@ -64,7 +63,6 @@
       font-weight: 500;
     }
     
-    /* 首个子标题去除顶部多余间距，布局更紧凑 */
     .occlusion-subtitle:first-of-type {
       margin-top: 0;
     }
@@ -72,21 +70,20 @@
     .video-row {
       display: flex;
       justify-content: center;
-      gap: 3rem; /* 增加间距使布局更匀称 */
+      gap: 3rem;
       margin-bottom: 2.5rem;
       flex-wrap: wrap;
     }
     
-    /* 两行两列布局 - 每个视频项宽度适中 */
     .video-item {
-      width: 280px; /* 适度增大视频宽度 */
+      width: 280px;
       flex-shrink: 0;
     }
     
     .video-container {
       position: relative;
       width: 100%;
-      height: 157px; /* 保持16:9比例 */
+      height: 157px;
       overflow: hidden;
       border-radius: 6px;
       background-color: #f0f0f0;
@@ -110,7 +107,7 @@
       min-height: 24px;
     }
 
-    /* 新增：密集杂乱实验专属样式 - 优化8个视频排版，更整洁紧凑 */
+    /* 密集杂乱实验：强制一行四列的样式（核心修正） */
     .cluttered-subtitle {
       text-align: center;
       font-size: 1rem;
@@ -118,24 +115,26 @@
       margin: 1.8rem 0 1.2rem;
       font-weight: 500;
     }
-    /* 密集杂乱实验视频行 - 缩小间距，提升整洁度（支持一行四列适配） */
+    /* 调整行的宽度和间距，确保4个视频能并排 */
     .cluttered-video-row {
       display: flex;
       justify-content: center;
-      gap: 2.5rem; /* 略小于普通视频行，避免页面过宽 */
-      margin-bottom: 2rem; /* 减少行间距，更紧凑 */
-      flex-wrap: wrap;
+      gap: 1.5rem; /* 缩小间距，适配4个视频 */
+      margin-bottom: 2rem;
+      flex-wrap: nowrap; /* 强制不换行（大屏），小屏自动换行 */
+      width: 100%;
+      overflow-x: auto; /* 小屏时允许横向滚动，避免挤压 */
+      padding-bottom: 1rem;
     }
-    /* 密集杂乱实验视频项 - 保持尺寸统一，确保整洁（适配一行四列布局） */
+    /* 缩小视频项宽度，确保4个能放下 */
     .cluttered-video-item {
-      width: 260px; /* 略窄于普通视频项，适配多列布局 */
+      width: 220px; /* 比之前更小，适配一行四列 */
       flex-shrink: 0;
     }
-    /* 密集杂乱实验视频容器 - 保持16:9比例，视觉统一 */
     .cluttered-video-container {
       position: relative;
       width: 100%;
-      height: 146px; /* 对应260px宽度的16:9比例 */
+      height: 124px; /* 对应220px宽度的16:9比例 */
       overflow: hidden;
       border-radius: 6px;
       background-color: #f0f0f0;
@@ -150,16 +149,17 @@
       object-fit: contain;
     }
     
-    /* 响应式调整 - 适配一行四列在小屏幕的折叠效果 */
-    @media (max-width: 1200px) {
+    /* 响应式调整（适配不同屏幕） */
+    @media (max-width: 1000px) {
+      .cluttered-video-row {
+        flex-wrap: wrap; /* 小屏时换行 */
+        justify-content: center;
+      }
       .cluttered-video-item {
-        width: 220px;
+        width: 260px;
       }
       .cluttered-video-container {
-        height: 124px;
-      }
-      .cluttered-video-row {
-        gap: 2rem;
+        height: 146px;
       }
     }
     
@@ -559,7 +559,7 @@
           </div>
         </div>
 
-        <!-- 第六组：密集杂乱实验（Dense and Cluttered Experiment）- 钳子实验已改为一行四列 -->
+        <!-- 第六组：密集杂乱实验（Dense and Cluttered Experiment）- 钳子实验一行四列（已修正） -->
         <div class="video-group">
           <div class="video-group-title">Dense and Cluttered Experiment</div>
           
@@ -609,7 +609,7 @@
             </div>
           </div>
           
-          <!-- 子标题3：钳子 杂乱实验（4个视频，一行四列布局 - 核心修改部分） -->
+          <!-- 子标题3：钳子 杂乱实验（一行四列，强制布局） -->
           <div class="cluttered-subtitle">Pliers (Cluttered)</div>
           <div class="cluttered-video-row">
             <div class="cluttered-video-item">
