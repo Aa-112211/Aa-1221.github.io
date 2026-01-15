@@ -109,29 +109,69 @@
       color: #333;
       min-height: 24px;
     }
+
+    /* 新增：密集杂乱实验专属样式 - 优化8个视频排版，更整洁紧凑 */
+    .cluttered-subtitle {
+      text-align: center;
+      font-size: 1rem;
+      color: #555;
+      margin: 1.8rem 0 1.2rem;
+      font-weight: 500;
+    }
+    /* 密集杂乱实验视频行 - 缩小间距，提升整洁度 */
+    .cluttered-video-row {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem; /* 略小于普通视频行，避免页面过宽 */
+      margin-bottom: 2rem; /* 减少行间距，更紧凑 */
+      flex-wrap: wrap;
+    }
+    /* 密集杂乱实验视频项 - 保持尺寸统一，确保整洁 */
+    .cluttered-video-item {
+      width: 260px; /* 略窄于普通视频项，适配8个视频的多行列布局 */
+      flex-shrink: 0;
+    }
+    /* 密集杂乱实验视频容器 - 保持16:9比例，视觉统一 */
+    .cluttered-video-container {
+      position: relative;
+      width: 100%;
+      height: 146px; /* 对应260px宽度的16:9比例 */
+      overflow: hidden;
+      border-radius: 6px;
+      background-color: #f0f0f0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .cluttered-video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
     
     /* 响应式调整 */
     @media (max-width: 800px) {
-      .video-item {
+      .video-item, .cluttered-video-item {
         width: 220px;
       }
-      .video-container {
+      .video-container, .cluttered-video-container {
         height: 124px;
       }
-      .video-row {
+      .video-row, .cluttered-video-row {
         gap: 2rem;
       }
     }
     
     @media (max-width: 550px) {
-      .video-item {
+      .video-item, .cluttered-video-item {
         width: 100%;
         max-width: 300px;
       }
-      .video-container {
+      .video-container, .cluttered-video-container {
         height: 169px;
       }
-      .video-row {
+      .video-row, .cluttered-video-row {
         gap: 1.5rem;
         margin-bottom: 1.5rem;
       }
@@ -413,11 +453,11 @@
           </div>
         </div>
 
-        <!-- 统一大标题：Occlusion Experiment（遮挡实验，每个工具独立子标题） -->
+        <!-- 第五组：遮挡实验（每个工具独立子标题） -->
         <div class="video-group">
           <div class="video-group-title">Occlusion Experiment</div>
           
-          <!-- 子标题1：锤子遮挡实验（独立标题） -->
+          <!-- 子标题1：锤子遮挡实验 -->
           <div class="occlusion-subtitle">Hammer Occlusion Test (Success)</div>
           <div class="video-row">
             <div class="video-item">
@@ -460,7 +500,7 @@
             </div>
           </div>
 
-          <!-- 子标题2：棘轮扳手遮挡实验（独立标题） -->
+          <!-- 子标题2：棘轮扳手遮挡实验 -->
           <div class="occlusion-subtitle">Ratchet Wrench Occlusion Test (Success)</div>
           <div class="video-row">
             <div class="video-item">
@@ -483,7 +523,7 @@
             </div>
           </div>
 
-          <!-- 子标题3：钳子遮挡实验（独立标题） -->
+          <!-- 子标题3：钳子遮挡实验 -->
           <div class="occlusion-subtitle">Pliers Occlusion Test (Success)</div>
           <div class="video-row">
             <div class="video-item">
@@ -503,6 +543,100 @@
                 </video>
               </div>
               <div class="video-caption">Pliers Occlusion 2</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 第六组：密集杂乱实验（Dense and Cluttered Experiment）- 优化8个视频排版，整洁美观 -->
+        <div class="video-group">
+          <div class="video-group-title">Dense and Cluttered Experiment</div>
+          
+          <!-- 子标题1：螺丝刀 & 扳手 杂乱实验 -->
+          <div class="cluttered-subtitle">Screwdriver & Wrench (Cluttered)</div>
+          <div class="cluttered-video-row">
+            <div class="cluttered-video-item">
+              <div class="cluttered-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/螺丝刀_杂乱.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Screwdriver (Cluttered)</div>
+            </div>
+            <div class="cluttered-video-item">
+              <div class="cluttered-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/扳手_杂乱.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Wrench (Cluttered)</div>
+            </div>
+          </div>
+          
+          <!-- 子标题2：棘轮扳手 杂乱实验 -->
+          <div class="cluttered-subtitle">Ratchet Wrench (Cluttered)</div>
+          <div class="cluttered-video-row">
+            <div class="cluttered-video-item">
+              <div class="cluttered-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/棘轮扳手_杂乱1.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Ratchet Wrench Cluttered 1</div>
+            </div>
+            <div class="cluttered-video-item">
+              <div class="cluttered-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/棘轮扳手_杂乱2.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Ratchet Wrench Cluttered 2</div>
+            </div>
+          </div>
+          
+          <!-- 子标题3：钳子 杂乱实验（4个视频，两行列布局，整洁紧凑） -->
+          <div class="cluttered-subtitle">Pliers (Cluttered)</div>
+          <div class="cluttered-video-row">
+            <div class="cluttered-video-item">
+              <div class="cluttered-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/钳子_杂乱1.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Pliers Cluttered 1</div>
+            </div>
+            <div class="cluttered-video-item">
+              <div class="cluttered-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/钳子_杂乱2.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Pliers Cluttered 2</div>
+            </div>
+          </div>
+          <div class="cluttered-video-row">
+            <div class="cluttered-video-item">
+              <div class="cluttered-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/钳子_杂乱3.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Pliers Cluttered 3</div>
+            </div>
+            <div class="cluttered-video-item">
+              <div class="cluttered-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/钳子_杂乱4.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Pliers Cluttered 4</div>
             </div>
           </div>
         </div>
