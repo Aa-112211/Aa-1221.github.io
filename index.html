@@ -55,7 +55,7 @@
       color: #333;
     }
     
-    /* 新增：遮挡实验子标题样式（全英文，与整体风格匹配） */
+    /* 遮挡实验子标题样式（全英文，每个工具独立标题） */
     .occlusion-subtitle {
       text-align: center;
       font-size: 1rem;
@@ -64,7 +64,7 @@
       font-weight: 500;
     }
     
-    /* 首次子标题间距调整（去除顶部多余间距） */
+    /* 首个子标题去除顶部多余间距，布局更紧凑 */
     .occlusion-subtitle:first-of-type {
       margin-top: 0;
     }
@@ -413,14 +413,12 @@
           </div>
         </div>
 
-        <!-- 统一大标题：Occlusion experiment（遮挡实验，全英文） -->
+        <!-- 统一大标题：Occlusion Experiment（遮挡实验，每个工具独立子标题） -->
         <div class="video-group">
           <div class="video-group-title">Occlusion Experiment</div>
           
-          <!-- 子标题1：锤子遮挡实验（全英文，无中文） -->
+          <!-- 子标题1：锤子遮挡实验（独立标题） -->
           <div class="occlusion-subtitle">Hammer Occlusion Test (Success)</div>
-          
-          <!-- 锤子遮挡视频：两行两列 -->
           <div class="video-row">
             <div class="video-item">
               <div class="video-container">
@@ -462,10 +460,8 @@
             </div>
           </div>
 
-          <!-- 子标题2：棘轮扳手+钳子遮挡实验（全英文，无中文） -->
-          <div class="occlusion-subtitle">Ratchet Wrench & Pliers Occlusion Test (Success)</div>
-          
-          <!-- 棘轮扳手+钳子遮挡视频：两行两列 -->
+          <!-- 子标题2：棘轮扳手遮挡实验（独立标题） -->
+          <div class="occlusion-subtitle">Ratchet Wrench Occlusion Test (Success)</div>
           <div class="video-row">
             <div class="video-item">
               <div class="video-container">
@@ -486,6 +482,9 @@
               <div class="video-caption">Ratchet Wrench Occlusion 2</div>
             </div>
           </div>
+
+          <!-- 子标题3：钳子遮挡实验（独立标题） -->
+          <div class="occlusion-subtitle">Pliers Occlusion Test (Success)</div>
           <div class="video-row">
             <div class="video-item">
               <div class="video-container">
