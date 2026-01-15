@@ -148,10 +148,50 @@
       height: 100%;
       object-fit: contain;
     }
+
+    /* 新增：扭矩实验专属样式（一行五列布局，适配工具类视频） */
+    .torque-subtitle {
+      text-align: center;
+      font-size: 1rem;
+      color: #555;
+      margin: 1.8rem 0 1.2rem;
+      font-weight: 500;
+    }
+    .torque-video-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem; /* 缩小间距适配5个视频 */
+      margin-bottom: 2rem;
+      flex-wrap: nowrap; /* 大屏强制一行 */
+      width: 100%;
+      overflow-x: auto; /* 小屏横向滚动 */
+      padding-bottom: 1rem;
+    }
+    .torque-video-item {
+      width: 180px; /* 更小宽度适配5个视频 */
+      flex-shrink: 0;
+    }
+    .torque-video-container {
+      position: relative;
+      width: 100%;
+      height: 101px; /* 180px宽度对应的16:9比例 */
+      overflow: hidden;
+      border-radius: 6px;
+      background-color: #f0f0f0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .torque-video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
     
     /* 响应式调整（适配不同屏幕） */
     @media (max-width: 1000px) {
-      .cluttered-video-row {
+      .cluttered-video-row, .torque-video-row {
         flex-wrap: wrap; /* 小屏时换行 */
         justify-content: center;
       }
@@ -161,29 +201,35 @@
       .cluttered-video-container {
         height: 146px;
       }
+      .torque-video-item {
+        width: 220px;
+      }
+      .torque-video-container {
+        height: 124px;
+      }
     }
     
     @media (max-width: 800px) {
-      .video-item, .cluttered-video-item {
+      .video-item, .cluttered-video-item, .torque-video-item {
         width: 220px;
       }
-      .video-container, .cluttered-video-container {
+      .video-container, .cluttered-video-container, .torque-video-container {
         height: 124px;
       }
-      .video-row, .cluttered-video-row {
+      .video-row, .cluttered-video-row, .torque-video-row {
         gap: 2rem;
       }
     }
     
     @media (max-width: 550px) {
-      .video-item, .cluttered-video-item {
+      .video-item, .cluttered-video-item, .torque-video-item {
         width: 100%;
         max-width: 300px;
       }
-      .video-container, .cluttered-video-container {
+      .video-container, .cluttered-video-container, .torque-video-container {
         height: 169px;
       }
-      .video-row, .cluttered-video-row {
+      .video-row, .cluttered-video-row, .torque-video-row {
         gap: 1.5rem;
         margin-bottom: 1.5rem;
       }
@@ -647,6 +693,211 @@
                 </video>
               </div>
               <div class="video-caption">Pliers Cluttered 4</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 新增：扭矩实验模块（Torque Experiment） -->
+        <div class="video-group">
+          <div class="video-group-title">Torque Experiment</div>
+          
+          <!-- 子标题1：0.2 Torque -->
+          <div class="torque-subtitle">0.2 Torque</div>
+          <div class="torque-video-row">
+            <div class="torque-video-item">
+              <div class="torque-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/0.2扭矩 扳手.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Wrench</div>
+            </div>
+            <div class="torque-video-item">
+              <div class="torque-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/0.2扭矩 锤子.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Hammer</div>
+            </div>
+            <div class="torque-video-item">
+              <div class="torque-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/0.2扭矩 棘轮扳手.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Ratchet Wrench</div>
+            </div>
+            <div class="torque-video-item">
+              <div class="torque-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/0.2扭矩 螺丝刀.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Screwdriver</div>
+            </div>
+            <div class="torque-video-item">
+              <div class="torque-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/0.2扭矩 钳子.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Pliers</div>
+            </div>
+          </div>
+          
+          <!-- 子标题2：1 Torque -->
+          <div class="torque-subtitle">1 Torque</div>
+          <div class="torque-video-row">
+            <div class="torque-video-item">
+              <div class="torque-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/1扭矩 扳手.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Wrench</div>
+            </div>
+            <div class="torque-video-item">
+              <div class="torque-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/1扭矩 锤子.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Hammer</div>
+            </div>
+            <div class="torque-video-item">
+              <div class="torque-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/1扭矩 棘轮扳手.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Ratchet Wrench</div>
+            </div>
+            <div class="torque-video-item">
+              <div class="torque-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/1扭矩 螺丝刀.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Screwdriver</div>
+            </div>
+            <div class="torque-video-item">
+              <div class="torque-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/1扭矩 钳子.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Pliers</div>
+            </div>
+          </div>
+          
+          <!-- 子标题3：1.5 Torque -->
+          <div class="torque-subtitle">1.5 Torque</div>
+          <div class="torque-video-row">
+            <div class="torque-video-item">
+              <div class="torque-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/1.5扭矩 扳手.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Wrench</div>
+            </div>
+            <div class="torque-video-item">
+              <div class="torque-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/1.5扭矩 锤子.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Hammer</div>
+            </div>
+            <div class="torque-video-item">
+              <div class="torque-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/1.5扭矩 棘轮扳手.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Ratchet Wrench</div>
+            </div>
+            <div class="torque-video-item">
+              <div class="torque-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/1.5扭矩 螺丝刀.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Screwdriver</div>
+            </div>
+            <div class="torque-video-item">
+              <div class="torque-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/1.5扭矩 钳子.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Pliers</div>
+            </div>
+          </div>
+          
+          <!-- 子标题4：2 Torque -->
+          <div class="torque-subtitle">2 Torque</div>
+          <div class="torque-video-row">
+            <div class="torque-video-item">
+              <div class="torque-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/2扭矩 扳手.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Wrench</div>
+            </div>
+            <div class="torque-video-item">
+              <div class="torque-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/2扭矩 锤子.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Hammer</div>
+            </div>
+            <div class="torque-video-item">
+              <div class="torque-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/2扭矩 棘轮扳手.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Ratchet Wrench</div>
+            </div>
+            <div class="torque-video-item">
+              <div class="torque-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/2扭矩 螺丝刀.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Screwdriver</div>
+            </div>
+            <div class="torque-video-item">
+              <div class="torque-video-container">
+                <video controls loop autoplay>
+                  <source src="static/videos/2扭矩 钳子.mp4" type="video/mp4">
+                  Your browser does not support HTML5 video playback. Please upgrade your browser and try again.
+                </video>
+              </div>
+              <div class="video-caption">Pliers</div>
             </div>
           </div>
         </div>
